@@ -1,0 +1,17 @@
+function loadPage(page) {
+    const contentDiv = document.getElementById('content');
+    contentDiv.innerHTML = 'Loading...';
+
+    // Fetch the JSON file and get the content for the specified page
+    fetch('pages.json')
+        .then(response => response.json())
+        .then(data => {
+            const selectedPage = data.pages.find(p => p.name === page);
+            contentDiv.innerHTML = selectedPage ? selectedPage.content : 'Page not found';
+        })
+        .catch(error => {
+            console.error('Error fetching JSON:', error);
+            contentDiv.innerHTML = 'Error loading content';
+        });
+}
+
