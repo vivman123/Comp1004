@@ -12,4 +12,6 @@ Add passwords
 Delete passwords
 Add emails and account names
 Register accounts
-and login page
+login page
+Export passwords in JSON File 
+Import passwords in JSON File
